@@ -102,7 +102,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "9e4ee3f3a946bd02d30550250d7e77bd5d572c844e6e4d96ed7b1d56ad63708e"
+      "sha256": "b0401831831008574fbb3fa5ebb1f3858fbff0087aa9b4784d9f6f32299c1d5c"
     },
     {
       "path": "CONTRIBUTING.md",
@@ -111,6 +111,22 @@
     {
       "path": "THIRD_PARTY.md",
       "sha256": "4f9ea1b55070697b612b8f70b79825b08d113da7452e467fafd6037b866ebb31"
+    },
+    {
+      "path": "README.en.md",
+      "sha256": "08048c8dbcc126f8c4651fe901ead31525fddf8e4c12095efa37c4fccda5f3a9"
+    },
+    {
+      "path": "docs/screenshots/devices.jpg",
+      "sha256": "f5cee3c97be684c7e6fdff201c648eb67ef1ed7c6da03aa518c062f6d041780f"
+    },
+    {
+      "path": "docs/screenshots/clients.jpg",
+      "sha256": "09a20297d1951540f7024caa06140a6d1e2cf3ed680fb4066babc4dd6dfff3d6"
+    },
+    {
+      "path": "docs/screenshots/activity.jpg",
+      "sha256": "5bd50ea7442c6830431a0b778f9c0b1c86a5c4c8e261b390234da5f9de89083c"
     }
   ]
 }
