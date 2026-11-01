@@ -1,0 +1,116 @@
+{
+  "files": [
+    {
+      "path": "LICENSE",
+      "sha256": "1dbc9f206f32d15d5eb38365e2c7f239febc20cf9b2474ab7f32e2e4cd54a7ae"
+    },
+    {
+      "path": "SECURITY.md",
+      "sha256": "b5eb1abde4d0208aac59a666d01664a1b295d607de8b0b03f931138c9db009a4"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "ab233f21455b3e189f3a69acc2a6c5587dd3eb64924a7b2fe9fe3ec4ea95d445"
+    },
+    {
+      "path": "announcements.cjs",
+      "sha256": "57eda6de1357d65523056915130dd9d9ba6fed4ca7f22e81c57cb889a3d69d47"
+    },
+    {
+      "path": "device-registry.cjs",
+      "sha256": "85059f1bd02668d6668bccc0c3f5d06585e3fb7f6e7cd5dfe3dcb9d2e20a76ec"
+    },
+    {
+      "path": "index.cjs",
+      "sha256": "21f6516e404872545f4157106813b8dea338ff0dd7bc75ed2fd8d0d3c8fc56d0"
+    },
+    {
+      "path": "localized-content.cjs",
+      "sha256": "da54e5e7cb38d2fd38f8e21bd74efd42d05c8267dd649415bfb38632a8050719"
+    },
+    {
+      "path": "mobile-api.cjs",
+      "sha256": "83600d92ce798b522a431a5ba91348e5d7038d7768edd309951205fff562553e"
+    },
+    {
+      "path": "mobile-registry.cjs",
+      "sha256": "96195caf54a1cf0de6adecd3c754874f2e7123c21ffdec47c0e975c4732b1d64"
+    },
+    {
+      "path": "operations.cjs",
+      "sha256": "24cb9802c05d2b440b35ac40d97c812660ce3e8040a90be309a291e5c22cd7a0"
+    },
+    {
+      "path": "project-links.cjs",
+      "sha256": "3013a415acef9a5d3b06512c3b7ed96c066eb038a1cd48a87544b4d5dc56e841"
+    },
+    {
+      "path": "relay-server.cjs",
+      "sha256": "3b618dbef82599beb3100cf10a6c33d3ed3f899d93a32aa1fdee708c7a3ec0d6"
+    },
+    {
+      "path": "wechat-notify.cjs",
+      "sha256": "86fecbf05cdae393916aecbf73fad80d16c6dfdcb09960b92a3283f7b74032f8"
+    },
+    {
+      "path": "package.json",
+      "sha256": "e735465ab68f99863fbde5c3659b90c03bb8651522441199767afa17eedb57af"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "9b95cf1522663b4d4ac446c69d7e59371d84b3f1a5b72019b3fa9d866ea6ab7d"
+    },
+    {
+      "path": "ops/index.html",
+      "sha256": "68e7fbee50b485eb7669da20e22e1e526969c9e48f9c961c3e4da8e8feb8a515"
+    },
+    {
+      "path": "ops/app.js",
+      "sha256": "3512b5d9a8a2dea7d87aad1f512ddafd49fa85fee4fab6cbefbf8de3a3c25cf5"
+    },
+    {
+      "path": "ops/styles.css",
+      "sha256": "c61fb5e5a3aafbe9a6bb7711afe11a846652604cf3eae297e80ea877eb173331"
+    },
+    {
+      "path": "project-links.json",
+      "sha256": "ebdd08036a5ffc871c5555fc93081d903478bf192cd0a8e854f29c3d87e232a4"
+    },
+    {
+      "path": "announcements.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "mobile-announcements.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "setup-agents.json",
+      "sha256": "ee4e2a2f35874e9e501a0804c1b0729d5088a5fba35ae5a4802d17ce1e8f8331"
+    },
+    {
+      "path": "tests/relay.test.cjs",
+      "sha256": "8a018b017ba160af38794ea54a19aae3501b60fe6010ffe787833554f6db0695"
+    },
+    {
+      "path": "tests/registry.test.cjs",
+      "sha256": "02a01ce593e872b895c5db34beb8be24340821cfd1cd5aa8d67c5e3d4dc124d7"
+    },
+    {
+      "path": "tests/operations.test.cjs",
+      "sha256": "2cc844a0163a0ba2a4ef28eed4bcca5ac3ff572aa77bb3aed88d96973c63b903"
+    },
+    {
+      "path": "README.md",
+      "sha256": "9e4ee3f3a946bd02d30550250d7e77bd5d572c844e6e4d96ed7b1d56ad63708e"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "sha256": "a87618dcb8091875740a00d09d1de6074acaba8a03237b3dac282d8ee1fa8b5d"
+    },
+    {
+      "path": "THIRD_PARTY.md",
+      "sha256": "4f9ea1b55070697b612b8f70b79825b08d113da7452e467fafd6037b866ebb31"
+    }
+  ]
+}

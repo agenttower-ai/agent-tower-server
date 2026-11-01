@@ -1,0 +1,50 @@
+const { test } = require('node:test');
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const os = require('node:os');
+const path = require('node:path');
+const { createDeviceRegistry } = require('../device-registry.cjs');
+const { createMobileRegistry } = require('../mobile-registry.cjs');
+
+test('bound device credentials persist as hashes and survive server restart', t => {
+  const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'agenttower-registry-'));
+  t.after(() => fs.rmSync(directory, { recursive: true, force: true }));
+  const file = path.join(directory, 'devices.json');
+  const token = 'secret-device-token'.repeat(4);
+  const registry = createDeviceRegistry({ file });
+  registry.issue({ id: 'office', name: 'Office PC', platform: 'Windows', token });
+  assert.equal(registry.verify('office', token), true);
+  assert.equal(fs.readFileSync(file, 'utf8').includes(token), false);
+  const restored = createDeviceRegistry({ file });
+  assert.equal(restored.verify('office', token), true);
+  restored.rename('office', 'Workstation');
+  assert.equal(createDeviceRegistry({ file }).list()[0].name, 'Workstation');
+  restored.remove('office');
+  assert.equal(createDeviceRegistry({ file }).verify('office', token), false);
+});
+
+test('phone credentials and one-to-many binding observations persist without secrets', t => {
+  const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'agenttower-phone-registry-'));
+  t.after(() => fs.rmSync(directory, { recursive: true, force: true }));
+  const file = path.join(directory, 'phones.json');
+  const first = createMobileRegistry({ file });
+  const installSecret = 'e'.repeat(64);
+  const token = first.issue({ id: 'phone_1234567890123456', name: 'My phone', platform: 'android 16', source: 'app', ip: '203.0.113.10', userAgent: 'AgentTower App', installSecret });
+  const wechatToken = first.issue({ id: 'wechat_123456789012345', name: 'My WeChat', platform: 'wechat iOS', source: 'wechat-mini-program', ip: '203.0.113.11', installSecret: 'f'.repeat(64) });
+  first.attachDevice('phone_1234567890123456', { id: 'office', name: 'Office PC', platform: 'Windows 11' }, { source: 'app', ip: '203.0.113.10' });
+  first.attachDevice('wechat_123456789012345', { id: 'office', name: 'Office PC', platform: 'Windows 11' }, { source: 'wechat-mini-program', ip: '203.0.113.11' });
+  assert.equal(fs.readFileSync(file, 'utf8').includes(token), false);
+  assert.equal(fs.readFileSync(file, 'utf8').includes(installSecret), false);
+  const restored = createMobileRegistry({ file });
+  assert.equal(restored.verify(token), true);
+  assert.equal(restored.authenticate(token).deviceIds[0], 'office');
+  assert.equal(restored.hasDevice('phone_1234567890123456', 'office'), true);
+  assert.equal(restored.authenticate(wechatToken).deviceIds[0], 'office');
+  assert.equal(restored.controllerCount('office'), 2);
+  const appBinding = restored.bindingsFor('phone_1234567890123456')[0];
+  assert.deepEqual([appBinding.deviceId, appBinding.deviceName, appBinding.devicePlatform, appBinding.source, appBinding.ip], ['office', 'Office PC', 'Windows 11', 'app', '203.0.113.10']);
+  const wechatBinding = restored.bindingsFor('wechat_123456789012345')[0];
+  assert.deepEqual([wechatBinding.deviceId, wechatBinding.source, wechatBinding.ip], ['office', 'wechat-mini-program', '203.0.113.11']);
+  assert.equal(restored.revoke(token), true);
+  assert.equal(createMobileRegistry({ file }).verify(token), false);
+});

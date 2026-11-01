@@ -1,0 +1,16 @@
+{
+  "name": "agenttower-relay",
+  "version": "0.2.0",
+  "private": true,
+  "description": "AgentTower central relay server",
+  "scripts": {
+    "start": "node index.cjs"
+  },
+  "dependencies": {
+    "ws": "8.21.3"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "SEE LICENSE IN LICENSE"
+}

@@ -1,0 +1,52 @@
+[
+  {
+    "id": "opencode",
+    "name": "OpenCode",
+    "brand": "opencode"
+  },
+  {
+    "id": "opencode-cli",
+    "name": "OpenCode CLI",
+    "brand": "opencode"
+  },
+  {
+    "id": "claude",
+    "name": "Claude Code",
+    "brand": "claude"
+  },
+  {
+    "id": "codebuddy",
+    "name": "CodeBuddy Code CLI",
+    "brand": "codebuddy"
+  },
+  {
+    "id": "codebuddy-desktop",
+    "name": "CodeBuddy CN 独立 IDE",
+    "brand": "codebuddy"
+  },
+  {
+    "id": "cursor",
+    "name": "Cursor",
+    "brand": "cursor"
+  },
+  {
+    "id": "cursor-cli",
+    "name": "Cursor CLI",
+    "brand": "cursor"
+  },
+  {
+    "id": "dsh",
+    "name": "DeepSeek Harness",
+    "brand": "deepseek"
+  },
+  {
+    "id": "codex",
+    "name": "Codex",
+    "brand": "codex"
+  },
+  {
+    "id": "codex-cli",
+    "name": "Codex CLI",
+    "brand": "codex"
+  }
+]

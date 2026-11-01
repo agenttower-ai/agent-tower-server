@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>AgentTower · 运维后台</title><link rel="stylesheet" href="/ops/styles.css"><script defer src="/ops/app.js"></script></head>
+<body>
+  <main>
+    <header><div><span class="brand">AGENTTOWER / OPERATIONS</span><h1>运维后台</h1></div><div id="actions" hidden><button id="refresh" type="button">刷新数据</button><button id="logout" type="button">退出登录</button></div></header>
+    <p id="message" role="status" aria-live="polite"></p>
+    <section id="login-panel" class="panel login">
+      <h2>管理员认证</h2><p>登录后查看客户端规模、活跃情况和设备连接状态。</p>
+      <form id="login-form"><label>管理员用户名<input name="username" autocomplete="username" required maxlength="200"></label><label>管理员密码<input name="password" type="password" autocomplete="current-password" required maxlength="2000"></label><button id="login-button" class="primary" type="submit">登录后台</button></form>
+    </section>
+    <section id="dashboard" hidden>
+      <p class="note">用户口径：当前有效的客户端安装标识；同一人使用 App 和小程序或重新安装可能重复计数，撤销接入后不再计入。活跃指在时间窗口内注册或成功请求过认证接口，最近访问记录约每分钟更新。</p>
+      <div id="metrics" class="metrics"></div>
+      <nav class="tabs" aria-label="明细导航"><button class="tab active" data-tab="devices" type="button">注册设备列表</button><button class="tab" data-tab="clients" type="button">客户端信息列表</button></nav>
+      <section id="devices-panel" class="panel detail-panel"><h2>注册设备列表</h2><p>展示设备凭证注册记录及当前连接状态，不展示设备凭证。</p><div class="table-scroll"><table><thead><tr><th>设备名称</th><th>设备 ID</th><th>平台</th><th>来源</th><th>状态</th><th>最近连接</th><th>绑定客户端</th></tr></thead><tbody id="devices"></tbody></table></div></section>
+      <section id="clients-panel" class="panel detail-panel" hidden><h2>客户端信息列表</h2><p>展示客户端安装标识、来源、活跃时间及绑定设备，不展示访问凭证。</p><div class="table-scroll"><table><thead><tr><th>客户端名称</th><th>客户端 ID</th><th>来源</th><th>平台</th><th>注册时间</th><th>最后活跃</th><th>绑定设备</th></tr></thead><tbody id="clients"></tbody></table></div></section>
+      <section class="panel"><h2>客户端来源</h2><div class="table-scroll"><table><thead><tr><th>来源</th><th>客户端数</th><th>24 小时活跃</th><th>7 天活跃</th><th>30 天活跃</th><th>已绑定客户端</th></tr></thead><tbody id="sources"></tbody></table></div></section>
+      <section class="panel"><h2>近 14 天新增客户端</h2><p>按 UTC 自然日统计当前有效客户端的首次注册时间。</p><div id="registrations" class="trend"></div></section>
+      <footer id="updated"></footer>
+    </section>
+  </main>
+</body></html>
